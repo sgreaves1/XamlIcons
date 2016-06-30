@@ -29,7 +29,9 @@
                       Fill="Black"
                       Data="{Binding Path=SelectedIcon.Data}"></Path>
             </Canvas>
-            <Button Width="50" Height="20" Content="Next" Command="{Binding Path=NextCommand}"></Button>
+            <Button Width="50" Height="20" Content="Next" Command="{Binding Path=NextCommand}"/>
+            <CheckBox VerticalAlignment="Bottom" IsChecked="{Binding Path=FillIcon}"/>
+            <Label VerticalAlignment="Bottom" Content="Fill"/>
         </StackPanel>
         <TextBox TextWrapping="Wrap" Grid.Row="2" Text="{Binding Path=SelectedIcon.Data}"/>
     </Grid>
