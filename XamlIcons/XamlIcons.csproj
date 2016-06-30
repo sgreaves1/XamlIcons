@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Designer\DesignerMainWindowViewModel.cs" />
     <Compile Include="Model\BaseModel.cs" />
     <Compile Include="Model\IconModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
