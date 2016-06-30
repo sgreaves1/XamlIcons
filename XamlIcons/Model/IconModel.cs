@@ -2,13 +2,25 @@
 {
     public class IconModel : BaseModel
     {
+        private string _location;
         private string _name;
         private string _data;
 
-        public IconModel (string name, string data)
+        public IconModel (string location, string name, string data)
         {
+            Location = location;
             Name = name;
             Data = data;
+        }
+
+        public string Location
+        {
+            get { return _location; }
+            set
+            {
+                _location = value;
+                OnPropertyChanged();
+            }
         }
 
         public string Name
