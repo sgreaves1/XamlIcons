@@ -11,27 +11,26 @@
     <Grid>
         
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         
         <Label Content="{Binding Path=SelectedIcon.Name}" Grid.Row="0" HorizontalAlignment="Center"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Width="50" Height="20" Content="Back"></Button>
-            <Canvas Width="100" Height="100" Background="Transparent">
-                <Path Canvas.Left="7"
-                      Canvas.Top="7"
-        		      Width="86"
-                      Height="86"
+            <Button Width="50" Height="20" Content="Back" Command="{Binding Path=BackCommand}"></Button>
+            <Canvas Width="150" Height="150" Background="Transparent">
+                <Path Width="150"
+                      Height="150"
                       Stroke="Black"
                       StrokeThickness="3"
                       StrokeLineJoin="Round"
                       Stretch="Fill"
+                      Fill="Black"
                       Data="{Binding Path=SelectedIcon.Data}"></Path>
             </Canvas>
-            <Button Width="50" Height="20" Content="Next"></Button>
+            <Button Width="50" Height="20" Content="Next" Command="{Binding Path=NextCommand}"></Button>
         </StackPanel>
-        <TextBox TextWrapping="Wrap" Grid.Row="2" Text="{Binding Path=SelectedIcon.Data}"></TextBox>
+        <TextBox TextWrapping="Wrap" Grid.Row="2" Text="{Binding Path=SelectedIcon.Data}"/>
     </Grid>
 </Window>
