@@ -5,6 +5,12 @@
         private string _name;
         private string _data;
 
+        public IconModel (string name, string data)
+        {
+            Name = name;
+            Data = data;
+        }
+
         public string Name
         {
             get { return _name; }

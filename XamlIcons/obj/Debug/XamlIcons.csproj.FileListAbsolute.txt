@@ -1,1 +1,14 @@
 C:\own stuff\xamlIcons\XamlIcons\XamlIcons\bin\Debug\XamlIcons.exe.config
+C:\own stuff\xamlIcons\XamlIcons\XamlIcons\bin\Debug\XamlIcons.exe
+C:\own stuff\xamlIcons\XamlIcons\XamlIcons\bin\Debug\XamlIcons.pdb
+C:\own stuff\xamlIcons\XamlIcons\XamlIcons\obj\Debug\XamlIcons.csprojResolveAssemblyReference.cache
+C:\own stuff\xamlIcons\XamlIcons\XamlIcons\obj\Debug\MainWindow.g.cs
+C:\own stuff\xamlIcons\XamlIcons\XamlIcons\obj\Debug\App.g.cs
+C:\own stuff\xamlIcons\XamlIcons\XamlIcons\obj\Debug\XamlIcons_MarkupCompile.cache
+C:\own stuff\xamlIcons\XamlIcons\XamlIcons\obj\Debug\XamlIcons_MarkupCompile.lref
+C:\own stuff\xamlIcons\XamlIcons\XamlIcons\obj\Debug\MainWindow.baml
+C:\own stuff\xamlIcons\XamlIcons\XamlIcons\obj\Debug\XamlIcons.g.resources
+C:\own stuff\xamlIcons\XamlIcons\XamlIcons\obj\Debug\XamlIcons.Properties.Resources.resources
+C:\own stuff\xamlIcons\XamlIcons\XamlIcons\obj\Debug\XamlIcons.csproj.GenerateResource.Cache
+C:\own stuff\xamlIcons\XamlIcons\XamlIcons\obj\Debug\XamlIcons.exe
+C:\own stuff\xamlIcons\XamlIcons\XamlIcons\obj\Debug\XamlIcons.pdb
