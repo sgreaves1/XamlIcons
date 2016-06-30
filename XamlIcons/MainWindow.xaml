@@ -5,9 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:XamlIcons"
         xmlns:viewModel="clr-namespace:XamlIcons.Designer"
+        xmlns:converters="clr-namespace:XamlIcons.Converters"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525"
         d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, Type={x:Type viewModel:DesignerMainWindowViewModel}}">
+
+    <Window.Resources>
+        <converters:BrushColorConverter x:Key="boolToColorConverter"/>
+    </Window.Resources>
+
     <Grid>
         
         <Grid.RowDefinitions>
@@ -26,7 +32,7 @@
                       StrokeThickness="3"
                       StrokeLineJoin="Round"
                       Stretch="Fill"
-                      Fill="Black"
+                      Fill="{Binding Path=FillIcon, Converter={StaticResource boolToColorConverter}}"
                       Data="{Binding Path=SelectedIcon.Data}"></Path>
             </Canvas>
             <Button Width="50" Height="20" Content="Next" Command="{Binding Path=NextCommand}"/>
