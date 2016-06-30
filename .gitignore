@@ -1,1 +1,4 @@
 XamlIcons.sln.DotSettings
+*.g.i.cs
+*.g.cs
+XamlIcons/obj/Debug/
