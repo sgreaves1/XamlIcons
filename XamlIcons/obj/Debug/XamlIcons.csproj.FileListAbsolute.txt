@@ -12,3 +12,4 @@ C:\own stuff\xamlIcons\XamlIcons\XamlIcons\obj\Debug\XamlIcons.csproj.GenerateRe
 C:\own stuff\xamlIcons\XamlIcons\XamlIcons\obj\Debug\XamlIcons.exe
 C:\own stuff\xamlIcons\XamlIcons\XamlIcons\obj\Debug\XamlIcons.pdb
 C:\own stuff\xamlIcons\XamlIcons\XamlIcons\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\own stuff\xamlIcons\XamlIcons\XamlIcons\obj\Debug\XamlIcons.csprojResolveAssemblyReference.cache
