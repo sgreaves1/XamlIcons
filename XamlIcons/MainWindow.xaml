@@ -17,17 +17,21 @@
         </Grid.RowDefinitions>
         
         <Label Content="{Binding Path=SelectedIcon.Name}" Grid.Row="0" HorizontalAlignment="Center"/>
-        <Canvas Grid.Row="1" Width="100" Height="100" Background="Transparent">
-            <Path Canvas.Left="7"
-                  Canvas.Top="7"
-        		  Width="86"
-                  Height="86"
-                  Stroke="Black"
-                  StrokeThickness="3"
-                  StrokeLineJoin="Round"
-                  Stretch="Fill"
-                  Data="{Binding Path=SelectedIcon.Data}"></Path>
-        </Canvas>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Width="50" Height="20" Content="Back"></Button>
+            <Canvas Width="100" Height="100" Background="Transparent">
+                <Path Canvas.Left="7"
+                      Canvas.Top="7"
+        		      Width="86"
+                      Height="86"
+                      Stroke="Black"
+                      StrokeThickness="3"
+                      StrokeLineJoin="Round"
+                      Stretch="Fill"
+                      Data="{Binding Path=SelectedIcon.Data}"></Path>
+            </Canvas>
+            <Button Width="50" Height="20" Content="Next"></Button>
+        </StackPanel>
         <TextBox TextWrapping="Wrap" Grid.Row="2" Text="{Binding Path=SelectedIcon.Data}"></TextBox>
     </Grid>
 </Window>
