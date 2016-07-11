@@ -33,12 +33,12 @@
                       StrokeLineJoin="Round"
                       Stretch="Fill"
                       Fill="{Binding Path=FillIcon, Converter={StaticResource boolToColorConverter}}"
-                      Data="{Binding Path=SelectedIcon.Data}"></Path>
+                      Data="{Binding Path=SelectedIcon.Data, Mode=TwoWay}"></Path>
             </Canvas>
             <Button Width="50" Height="20" Content="Next" Command="{Binding Path=NextCommand}"/>
             <CheckBox VerticalAlignment="Bottom" IsChecked="{Binding Path=FillIcon}"/>
             <Label VerticalAlignment="Bottom" Content="Fill"/>
         </StackPanel>
-        <TextBox TextWrapping="Wrap" Grid.Row="2" Text="{Binding Path=SelectedIcon.Data}"/>
+        <TextBox TextWrapping="Wrap" Grid.Row="2" Text="{Binding Path=SelectedIcon.Data, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </Window>
