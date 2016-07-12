@@ -5,40 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:XamlIcons"
         xmlns:viewModel="clr-namespace:XamlIcons.Designer"
-        xmlns:converters="clr-namespace:XamlIcons.Converters"
+        xmlns:userControl="clr-namespace:XamlIcons.UserControl"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525"
         d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, Type={x:Type viewModel:DesignerMainWindowViewModel}}">
 
-    <Window.Resources>
-        <converters:BrushColorConverter x:Key="boolToColorConverter"/>
-    </Window.Resources>
-
-    <Grid>
-        
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        
-        <Label Content="{Binding Path=SelectedIcon.Name}" Grid.Row="0" HorizontalAlignment="Center"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Width="50" Height="20" Content="Back" Command="{Binding Path=BackCommand}"></Button>
-            <Canvas Width="150" Height="150" Background="Transparent">
-                <Path Width="150"
-                      Height="150"
-                      Stroke="Black"
-                      StrokeThickness="3"
-                      StrokeLineJoin="Round"
-                      Stretch="Fill"
-                      Fill="{Binding Path=FillIcon, Converter={StaticResource boolToColorConverter}}"
-                      Data="{Binding Path=SelectedIcon.Data, Mode=TwoWay}"></Path>
-            </Canvas>
-            <Button Width="50" Height="20" Content="Next" Command="{Binding Path=NextCommand}"/>
-            <CheckBox VerticalAlignment="Bottom" IsChecked="{Binding Path=FillIcon}"/>
-            <Label VerticalAlignment="Bottom" Content="Fill"/>
-        </StackPanel>
-        <TextBox TextWrapping="Wrap" Grid.Row="2" Text="{Binding Path=SelectedIcon.Data, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-    </Grid>
+    <userControl:IconInfoDisplay Icon="{Binding Path=SelectedIcon}"/>
 </Window>
