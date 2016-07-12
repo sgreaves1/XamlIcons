@@ -5,8 +5,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:converters="clr-namespace:XamlIcons.Converters"
              mc:Ignorable="d" 
-             d:DesignHeight="300" 
-             d:DesignWidth="300"
              x:Name="Root">
 
     <UserControl.Resources>
@@ -38,6 +36,6 @@
             <CheckBox VerticalAlignment="Bottom" IsChecked="{Binding Path=FillIcon}"/>
             <Label VerticalAlignment="Bottom" Content="Fill"/>
         </StackPanel>
-        <TextBox TextWrapping="Wrap" Grid.Row="2" Text="{Binding ElementName=Root, Path=Icon.Data, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Height="50" TextWrapping="Wrap" Grid.Row="2" Text="{Binding ElementName=Root, Path=Icon.Data, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </UserControl>

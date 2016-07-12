@@ -7,8 +7,12 @@
         xmlns:viewModel="clr-namespace:XamlIcons.Designer"
         xmlns:userControl="clr-namespace:XamlIcons.UserControl"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525"
+        Title="MainWindow" Height="650" Width="650"
         d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, Type={x:Type viewModel:DesignerMainWindowViewModel}}">
 
-    <userControl:IconInfoDisplay Icon="{Binding Path=SelectedIcon}"/>
+    <StackPanel>
+        <userControl:IconInfoDisplay Icon="{Binding Path=SelectedIcon}"/>
+
+        <ListBox ItemsSource="{Binding Path=Icons}" SelectedItem="{Binding Path=SelectedIcon}" DisplayMemberPath="Name"></ListBox>
+    </StackPanel>
 </Window>
