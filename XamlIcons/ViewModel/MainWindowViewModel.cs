@@ -19,11 +19,7 @@ namespace XamlIcons.ViewModel
             FillIcon = true;
 
             GetIcons();
-
-            _selectedIndex = 0;
-
-            GetSelectedIcon();
-
+            
             InitCommands();
         }
 

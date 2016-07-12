@@ -21,7 +21,6 @@
 
         <Label Content="{Binding ElementName=Root, Path=Icon.Name}" Grid.Row="0" HorizontalAlignment="Center"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Width="50" Height="20" Content="Back" Command="{Binding Path=BackCommand}"></Button>
             <Canvas Width="150" Height="150" Background="Transparent">
                 <Path Width="150"
                       Height="150"
@@ -32,7 +31,6 @@
                       Fill="{Binding Path=FillIcon, Converter={StaticResource boolToColorConverter}}"
                       Data="{Binding ElementName=Root, Path=Icon.Data, Mode=TwoWay}"/>
             </Canvas>
-            <Button Width="50" Height="20" Content="Next" Command="{Binding Path=NextCommand}"/>
             <CheckBox VerticalAlignment="Bottom" IsChecked="{Binding Path=FillIcon}"/>
             <Label VerticalAlignment="Bottom" Content="Fill"/>
         </StackPanel>
