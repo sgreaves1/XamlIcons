@@ -19,8 +19,6 @@ namespace XamlIcons.ViewModel
             FillIcon = true;
 
             GetIcons();
-            
-            InitCommands();
         }
 
         private void GetIcons()
@@ -121,45 +119,6 @@ namespace XamlIcons.ViewModel
                 _fillIcon = value;
                 OnPropertyChanged();
             }
-        }
-
-        public ICommand BackCommand { get; private set; }
-        public ICommand NextCommand { get; private set; }
-
-        public void InitCommands()
-        {
-            BackCommand = new RelayCommand(ExecuteBackPageCommand, CanExecuteBackPageCommand);
-            NextCommand = new RelayCommand(ExecuteNextPageCommand, CanExecuteNextPageCommand);
-        }
-
-        public bool CanExecuteBackPageCommand()
-        {
-            return true;
-        }
-
-        public void ExecuteBackPageCommand()
-        {
-            _selectedIndex--;
-
-            if (_selectedIndex < 0)
-                _selectedIndex = Icons.Count-1;
-
-            GetSelectedIcon();
-        }
-
-        public bool CanExecuteNextPageCommand()
-        {
-            return true;
-        }
-
-        public void ExecuteNextPageCommand()
-        {
-            _selectedIndex++;
-
-            if (_selectedIndex > Icons.Count - 1)
-                _selectedIndex = 0;
-
-            GetSelectedIcon();
         }
     }
 }

@@ -23,26 +23,27 @@
 
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Button Click="IconClicked">
-                        <Button.Template>
-                            <ControlTemplate TargetType="{x:Type Button}">
+                    <ToggleButton Click="IconClicked" 
+                                  IsChecked="{Binding Path=IsSelected, Mode=TwoWay}">
+                        <ToggleButton.Template>
+                            <ControlTemplate TargetType="{x:Type ToggleButton}">
                                 <Border Name="Border" BorderBrush="Black" BorderThickness="3" Background="AliceBlue">
                                     <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Margin="{TemplateBinding Padding}"/>
                                 </Border>
                                 <ControlTemplate.Triggers>
-                                    <Trigger Property="Button.IsFocused" Value="True">
+                                    <Trigger Property="ToggleButton.IsChecked" Value="True">
                                         <Setter TargetName="Border" Property="Background" Value="LightBlue"/>
                                     </Trigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
-                        </Button.Template>
+                        </ToggleButton.Template>
                         <StackPanel Width="90" Height="90">
                         <Label Content="{Binding Path=Name}" HorizontalAlignment="Center"/>
                             <Canvas Width="50" Height="50" Background="Transparent">
                                 <Path  Width="50" Height="50" Stroke="Black" Stretch="Fill" Fill="Black" Data="{Binding Data}"/>
                             </Canvas>
                     </StackPanel>
-                    </Button>
+                    </ToggleButton>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>

@@ -5,6 +5,7 @@
         private string _location;
         private string _name;
         private string _data;
+        private bool _isSelected;
 
         public IconModel (string location, string name, string data)
         {
@@ -39,6 +40,16 @@
             set
             {
                 _data = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool IsSelected
+        {
+            get { return _isSelected; }
+            set
+            {
+                _isSelected = value;
                 OnPropertyChanged();
             }
         }
