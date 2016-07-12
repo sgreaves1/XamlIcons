@@ -23,17 +23,5 @@ namespace XamlIcons
 
             DataContext = _viewModel;
         }
-
-        private void IconClicked(object sender, RoutedEventArgs e)
-        {
-            _viewModel.SelectedIcon = (IconModel)((ToggleButton)sender).DataContext;
-
-            foreach (var icon in _viewModel.Icons)
-            {
-                icon.IsSelected = false;
-            }
-
-            _viewModel.SelectedIcon.IsSelected = true;
-        }
     }
 }

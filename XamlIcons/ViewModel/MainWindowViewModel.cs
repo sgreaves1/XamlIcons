@@ -1,5 +1,6 @@
-﻿using System.Collections.ObjectModel;
-using System.Linq;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using XamlIcons.Commands;
 using XamlIcons.Model;
@@ -10,7 +11,6 @@ namespace XamlIcons.ViewModel
     {
         private ObservableCollection<IconModel> _icons = new ObservableCollection<IconModel>();
         private IconModel _selectedIcon;
-        private int _selectedIndex;
         private bool _fillIcon;
         
 
@@ -19,6 +19,8 @@ namespace XamlIcons.ViewModel
             FillIcon = true;
 
             GetIcons();
+
+            InitCommands();
         }
 
         private void GetIcons()
@@ -90,11 +92,6 @@ namespace XamlIcons.ViewModel
             
         }
 
-        private void GetSelectedIcon()
-        {
-            SelectedIcon = Icons[_selectedIndex];
-        }
-
         public ObservableCollection<IconModel> Icons
         {
             get { return _icons; }
@@ -119,6 +116,30 @@ namespace XamlIcons.ViewModel
                 _fillIcon = value;
                 OnPropertyChanged();
             }
+        }
+
+        public ICommand IconSelectedCommand { get; set; }
+
+        private void InitCommands()
+        {
+            IconSelectedCommand = new DelegateCommand(ExecuteIconSelectedCommand, CanExecuteIconSelectedCommand);
+        }
+
+        private bool CanExecuteIconSelectedCommand(object sender)
+        {
+            return true;
+        }
+
+        private void ExecuteIconSelectedCommand(object sender)
+        {
+            SelectedIcon = (IconModel)((ToggleButton)sender).DataContext;
+
+            foreach (var icon in Icons)
+            {
+                icon.IsSelected = false;
+            }
+
+            SelectedIcon.IsSelected = true;
         }
     }
 }

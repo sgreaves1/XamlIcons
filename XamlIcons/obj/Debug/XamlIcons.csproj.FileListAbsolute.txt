@@ -15,3 +15,5 @@ C:\own stuff\xamlIcons\XamlIcons\XamlIcons\obj\Debug\GeneratedInternalTypeHelper
 C:\own stuff\xamlIcons\XamlIcons\XamlIcons\obj\Debug\XamlIcons.csprojResolveAssemblyReference.cache
 C:\own stuff\xamlIcons\XamlIcons\XamlIcons\obj\Debug\UserControl\IconInfoDisplay.g.cs
 C:\own stuff\xamlIcons\XamlIcons\XamlIcons\obj\Debug\UserControl\IconInfoDisplay.baml
+C:\own stuff\xamlIcons\XamlIcons\XamlIcons\obj\Debug\UserControl\GalleryDisplay.g.cs
+C:\own stuff\xamlIcons\XamlIcons\XamlIcons\obj\Debug\UserControl\GalleryDisplay.baml
