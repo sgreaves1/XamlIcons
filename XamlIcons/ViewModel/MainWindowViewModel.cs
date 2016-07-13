@@ -12,7 +12,6 @@ namespace XamlIcons.ViewModel
         private ObservableCollection<IconModel> _icons = new ObservableCollection<IconModel>();
         private IconModel _selectedIcon;
         private bool _fillIcon;
-        
 
         public MainWindowViewModel()
         {
@@ -126,7 +125,7 @@ namespace XamlIcons.ViewModel
                 OnPropertyChanged();
             }
         }
-
+        
         public ICommand IconSelectedCommand { get; set; }
         public ICommand HideCommand { get; set; }
 

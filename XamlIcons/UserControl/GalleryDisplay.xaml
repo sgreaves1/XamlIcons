@@ -7,11 +7,12 @@
              d:DesignHeight="300" d:DesignWidth="300"
              x:Name="Root">
     <Grid>
-        <ItemsControl ItemsSource="{Binding ElementName=Root, Path=Icons}" 
-                 >
+        <ScrollViewer>
+            <ItemsControl ItemsSource="{Binding ElementName=Root, Path=Icons}">
+                
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel/>
+                        <WrapPanel/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
 
@@ -43,5 +44,6 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
+        </ScrollViewer>
     </Grid>
 </UserControl>

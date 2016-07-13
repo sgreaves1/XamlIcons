@@ -9,15 +9,22 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="650" Width="650"
         d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, Type={x:Type viewModel:DesignerMainWindowViewModel}}"
-        >
+        x:Name="Wind">
 
     <Window.Resources>
         <converters:NullToVisibilityConverter x:Key="nullToVisibilityConverter"/>
         <converters:IsNullConverter x:Key="isNullConverter"/>
     </Window.Resources>
-    
-    <StackPanel>
-        <userControl:IconInfoDisplay Icon="{Binding Path=SelectedIcon}" >
+
+    <Grid x:Name="Grids">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <userControl:IconInfoDisplay Grid.Row="0" Icon="{Binding Path=SelectedIcon}" >
             <userControl:IconInfoDisplay.Style>
                 <Style>
                     <Style.Triggers>
@@ -48,9 +55,12 @@
             </userControl:IconInfoDisplay.Style>
             </userControl:IconInfoDisplay>
         
-        <Button Width="50" Content="^^" Command="{Binding Path=HideCommand}"
+        <Button Grid.Row="1" Width="50" Content="^^" Command="{Binding Path=HideCommand}"
                 Visibility="{Binding Converter={StaticResource nullToVisibilityConverter}, Path=SelectedIcon}"/>
 
-        <userControl:GalleryDisplay Icons="{Binding Path=Icons}" SelectedIcon="{Binding Path=SelectedIcon}" IconSelectedCommand="{Binding Path=IconSelectedCommand}"/>
-    </StackPanel>
+        <userControl:GalleryDisplay Grid.Row="2" Icons="{Binding Path=Icons}" SelectedIcon="{Binding Path=SelectedIcon}" IconSelectedCommand="{Binding Path=IconSelectedCommand}"/>
+        
+        
+       
+    </Grid>
 </Window>
