@@ -5,13 +5,51 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModel="clr-namespace:XamlIcons.Designer"
         xmlns:userControl="clr-namespace:XamlIcons.UserControl"
+        xmlns:converters="clr-namespace:XamlIcons.Converters"
         mc:Ignorable="d"
         Title="MainWindow" Height="650" Width="650"
         d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, Type={x:Type viewModel:DesignerMainWindowViewModel}}"
         >
 
+    <Window.Resources>
+        <converters:NullToVisibilityConverter x:Key="nullToVisibilityConverter"/>
+        <converters:IsNullConverter x:Key="isNullConverter"/>
+    </Window.Resources>
+    
     <StackPanel>
-        <userControl:IconInfoDisplay Icon="{Binding Path=SelectedIcon}"/>
+        <userControl:IconInfoDisplay Icon="{Binding Path=SelectedIcon}" >
+            <userControl:IconInfoDisplay.Style>
+                <Style>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=SelectedIcon, Converter={StaticResource isNullConverter}}" Value="False">
+                            <DataTrigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation From="0"
+                                             To="250"
+                                             Duration="0:0:0.25"
+                                             Storyboard.TargetProperty="(userControl:IconInfoDisplay.Height)"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.EnterActions>
+                            <DataTrigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation From="250"
+                                             To="0"
+                                             Duration="0:0:0.25"
+                                             Storyboard.TargetProperty="(userControl:IconInfoDisplay.Height)"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.ExitActions>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </userControl:IconInfoDisplay.Style>
+            </userControl:IconInfoDisplay>
+        
+        <Button Width="50" Content="^^" Command="{Binding Path=HideCommand}"
+                Visibility="{Binding Converter={StaticResource nullToVisibilityConverter}, Path=SelectedIcon}"/>
 
         <userControl:GalleryDisplay Icons="{Binding Path=Icons}" SelectedIcon="{Binding Path=SelectedIcon}" IconSelectedCommand="{Binding Path=IconSelectedCommand}"/>
     </StackPanel>

@@ -119,10 +119,27 @@ namespace XamlIcons.ViewModel
         }
 
         public ICommand IconSelectedCommand { get; set; }
+        public ICommand HideCommand { get; set; }
 
         private void InitCommands()
         {
             IconSelectedCommand = new DelegateCommand(ExecuteIconSelectedCommand, CanExecuteIconSelectedCommand);
+            HideCommand = new DelegateCommand(ExecuteHideCommand, CanExecuteHideCommand);
+        }
+
+        private bool CanExecuteHideCommand(object o)
+        {
+            return true;
+        }
+
+        private void ExecuteHideCommand(object o)
+        {
+            SelectedIcon = null;
+
+            foreach (var icon in Icons)
+            {
+                icon.IsSelected = false;
+            }
         }
 
         private bool CanExecuteIconSelectedCommand(object sender)

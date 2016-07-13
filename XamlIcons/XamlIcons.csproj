@@ -58,6 +58,7 @@
     <Compile Include="Commands\DelegateCommand.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Converters\BrushColorConverter.cs" />
+    <Compile Include="Converters\IsNullConverter.cs" />
     <Compile Include="Converters\NullToVisibilityConverter.cs" />
     <Compile Include="Designer\DesignerMainWindowViewModel.cs" />
     <Compile Include="Model\BaseModel.cs" />
