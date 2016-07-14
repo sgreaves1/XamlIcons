@@ -7,7 +7,7 @@
         xmlns:userControl="clr-namespace:XamlIcons.UserControl"
         xmlns:converters="clr-namespace:XamlIcons.Converters"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="650"
+        Title="MainWindow" Height="650" Width="1050"
         d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, Type={x:Type viewModel:DesignerMainWindowViewModel}}"
         x:Name="Wind">
 

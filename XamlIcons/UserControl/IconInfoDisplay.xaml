@@ -13,17 +13,14 @@
     </UserControl.Resources>
 
     <Grid Visibility="{Binding Converter={StaticResource nullToVisibilityConverter}, ElementName=Root, Path=Icon}">
+       
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-
-        <Label Content="{Binding ElementName=Root, Path=Icon.Name}" Grid.Row="0" HorizontalAlignment="Center"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Canvas Width="150" Height="150" Background="Transparent">
-                <Path Width="150"
+        <Canvas Grid.Column="0" Margin="10" Width="200" Height="200" Background="Transparent">
+            <Path Width="150"
                       Height="150"
                       Stroke="Black"
                       StrokeThickness="3"
@@ -31,10 +28,19 @@
                       Stretch="Fill"
                       Fill="{Binding Path=FillIcon, Converter={StaticResource boolToColorConverter}}"
                       Data="{Binding ElementName=Root, Path=Icon.Data, Mode=TwoWay}"/>
-            </Canvas>
+        </Canvas>
+
+        
+        
+        <StackPanel Orientation="Vertical" Grid.Column="1">
+        <Label Content="{Binding ElementName=Root, Path=Icon.Name}" FontSize="20" HorizontalAlignment="Center"/>
+            
+        <StackPanel Orientation="Horizontal">
             <CheckBox VerticalAlignment="Bottom" IsChecked="{Binding Path=FillIcon}"/>
             <Label VerticalAlignment="Bottom" Content="Fill"/>
         </StackPanel>
-        <TextBox Height="50" TextWrapping="Wrap" Grid.Row="2" Text="{Binding ElementName=Root, Path=Icon.Data, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            
+        <TextBox Height="50" TextWrapping="Wrap" Text="{Binding ElementName=Root, Path=Icon.Data, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
     </Grid>
 </UserControl>
