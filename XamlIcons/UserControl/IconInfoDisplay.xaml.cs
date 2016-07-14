@@ -19,6 +19,15 @@ namespace XamlIcons.UserControl
                 new PropertyMetadata(null));
 
         /// <summary>
+        /// Dependency Property for the Copy to clipboard command 
+        /// </summary>
+        public static readonly DependencyProperty CopyToClipBoardCommandProperty =
+            DependencyProperty.Register("CopyToClipBoardCommand",
+                typeof(ICommand),
+                typeof(IconInfoDisplay),
+                new PropertyMetadata(null));
+
+        /// <summary>
         /// Constructor
         /// </summary>
         public IconInfoDisplay()
@@ -33,6 +42,15 @@ namespace XamlIcons.UserControl
         {
             get { return (IconModel)GetValue(IconProperty); }
             set { SetValue(IconProperty, value); }
+        }
+
+        /// <summary>
+        /// Command to copy data to the clip board
+        /// </summary>
+        public ICommand CopyToClipBoardCommand
+        {
+            get { return (ICommand)GetValue(CopyToClipBoardCommandProperty); }
+            set { SetValue(CopyToClipBoardCommandProperty, value); }
         }
     }
 }

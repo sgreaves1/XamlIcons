@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using XamlIcons.Commands;
@@ -129,13 +130,25 @@ namespace XamlIcons.ViewModel
             }
         }
         
+        public ICommand CopyToClipboardCommand { get; set; }
         public ICommand IconSelectedCommand { get; set; }
         public ICommand HideCommand { get; set; }
 
         private void InitCommands()
         {
+            CopyToClipboardCommand = new DelegateCommand(ExecuteCopyToClipboardCommand, CanExecuteCopyToClipboardCommand);
             IconSelectedCommand = new DelegateCommand(ExecuteIconSelectedCommand, CanExecuteIconSelectedCommand);
             HideCommand = new DelegateCommand(ExecuteHideCommand, CanExecuteHideCommand);
+        }
+
+        private bool CanExecuteCopyToClipboardCommand(object o)
+        {
+            return true;
+        }
+
+        private void ExecuteCopyToClipboardCommand(object o)
+        {
+            Clipboard.SetText(SelectedIcon.Data);
         }
 
         private bool CanExecuteHideCommand(object o)

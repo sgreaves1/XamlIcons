@@ -23,8 +23,8 @@
             <RowDefinition Height="Auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
-        
-        <userControl:IconInfoDisplay Grid.Row="0" Icon="{Binding Path=SelectedIcon}" >
+
+        <userControl:IconInfoDisplay Grid.Row="0" Icon="{Binding Path=SelectedIcon}" CopyToClipBoardCommand="{Binding Path=CopyToClipboardCommand}">
             <userControl:IconInfoDisplay.Style>
                 <Style>
                     <Style.Triggers>
