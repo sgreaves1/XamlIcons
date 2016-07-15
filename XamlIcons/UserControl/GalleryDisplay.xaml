@@ -30,7 +30,7 @@
                                             <DoubleAnimation Storyboard.TargetName="StackPanel1"
                                                         Storyboard.TargetProperty="Opacity"
                                                         To="1"
-                                                        Duration="0:0:001"
+                                                        Duration="0:0:0.25"
                                                         AutoReverse="False"/>
                                         </Storyboard>
                                </BeginStoryboard>
@@ -41,7 +41,7 @@
                                             <DoubleAnimation Storyboard.TargetName="StackPanel1"
                                                         Storyboard.TargetProperty="Opacity"
                                                         To="0.2"
-                                                        Duration="0:0:001"
+                                                        Duration="0:0:0.25"
                                                         AutoReverse="False"/>
                                         </Storyboard>
                                     </BeginStoryboard>
