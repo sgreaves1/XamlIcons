@@ -21,7 +21,8 @@
                     <ToggleButton Name="ToggleButton1"
                                   Command="{Binding ElementName=Root, Path=IconSelectedCommand}"
                                   CommandParameter="{Binding ElementName=ToggleButton1}"
-                                  IsChecked="{Binding Path=IsSelected, Mode=TwoWay}">
+                                  IsChecked="{Binding Path=IsSelected, Mode=TwoWay}"
+                                  ToolTip="{Binding Path=Name}">
                         
                        <ToggleButton.Triggers>
                            <EventTrigger RoutedEvent="ToggleButton.MouseEnter">
@@ -61,8 +62,7 @@
                             </ControlTemplate>
                         </ToggleButton.Template>
                         
-                        <StackPanel Name="StackPanel1" Width="90" Height="90" Opacity="0.2">
-                            <Label Content="{Binding Path=Name}" HorizontalAlignment="Center"/>
+                        <StackPanel Name="StackPanel1" Width="50" Height="50" Opacity="0.2">
                             <Canvas Width="50" Height="50" Background="Transparent">
                                 <Path  Width="50" Height="50" Stroke="Black" Stretch="Fill" Fill="Black" Data="{Binding Data}"/>
                             </Canvas>

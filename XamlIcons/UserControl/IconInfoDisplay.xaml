@@ -58,7 +58,7 @@
 
             <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
                 <Label Content="Author: "/>
-                <Label Content="{Binding ElementName=Root, Path=Icon.Location}"></Label>
+                <Label Content="{Binding ElementName=Root, Path=Icon.Author}"></Label>
             </StackPanel>
             
             <TextBox Grid.Row="2" Grid.Column="0" Height="50" TextWrapping="Wrap" Text="{Binding ElementName=Root, Path=Icon.Data, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>

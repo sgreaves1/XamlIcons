@@ -2,16 +2,28 @@
 {
     public class IconModel : BaseModel
     {
+        private string _author;
         private string _location;
         private string _name;
         private string _data;
         private bool _isSelected;
 
-        public IconModel (string location, string name, string data)
+        public IconModel (string author, string location, string name, string data)
         {
+            Author = author;
             Location = location;
             Name = name;
             Data = data;
+        }
+
+        public string Author
+        {
+            get { return _author; }
+            set
+            {
+                _author = value;
+                OnPropertyChanged();
+            }
         }
 
         public string Location
