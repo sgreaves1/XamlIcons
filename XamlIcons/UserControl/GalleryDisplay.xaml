@@ -22,7 +22,13 @@
                                   Command="{Binding ElementName=Root, Path=IconSelectedCommand}"
                                   CommandParameter="{Binding ElementName=ToggleButton1}"
                                   IsChecked="{Binding Path=IsSelected, Mode=TwoWay}"
-                                  ToolTip="{Binding Path=Name}">
+                                  >
+                        <ToggleButton.ToolTip>
+                            <StackPanel>
+                                <TextBlock Text="{Binding Path=Name}" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Path=Author}"/>
+                            </StackPanel>
+                        </ToggleButton.ToolTip>
                         
                        <ToggleButton.Triggers>
                            <EventTrigger RoutedEvent="ToggleButton.MouseEnter">
