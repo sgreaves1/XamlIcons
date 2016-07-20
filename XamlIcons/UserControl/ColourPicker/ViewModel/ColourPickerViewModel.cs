@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Windows.Media;
 using XamlIcons.UserControl.ColourPicker.Model;
 using XamlIcons.ViewModel;
 
@@ -15,7 +16,8 @@ namespace XamlIcons.UserControl.ColourPicker.ViewModel
 
         private void GetColours()
         {
-            Colours.Add(new ColourModel("Alice Blue"));
+            Colours.Add(new ColourModel("Alice Blue", Colors.AliceBlue));
+            Colours.Add(new ColourModel("Antique White", Colors.AntiqueWhite));
         }
 
         public ObservableCollection<ColourModel> Colours
