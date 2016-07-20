@@ -1,20 +1,19 @@
-﻿
-using System.Windows;
+﻿using System.Windows;
 
-namespace XamlIcons.UserControl
+namespace XamlIcons.UserControl.ColourPicker
 {
     /// <summary>
     /// Interaction logic for ColourPicker.xaml
     /// </summary>
-    public partial class ColourPicker 
+    public partial class ColourPicker
     {
         /// <summary>
         /// Dependency Property for the <see cref="Data"/> property
         /// </summary>
         public static readonly DependencyProperty DataProperty =
             DependencyProperty.Register("Data",
-                typeof(string), 
-                typeof(ColourPicker), 
+                typeof(string),
+                typeof(ColourPicker),
                 new PropertyMetadata(""));
 
         /// <summary>
