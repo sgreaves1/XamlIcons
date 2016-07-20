@@ -4,7 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:converters="clr-namespace:XamlIcons.Converters"
-             xmlns:userControl="clr-namespace:XamlIcons.UserControl"
              xmlns:colourPicker="clr-namespace:XamlIcons.UserControl.ColourPicker"
              mc:Ignorable="d" 
              x:Name="Root">

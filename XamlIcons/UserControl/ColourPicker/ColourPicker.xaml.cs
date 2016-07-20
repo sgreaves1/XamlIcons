@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
+using XamlIcons.UserControl.ColourPicker.Model;
+using XamlIcons.UserControl.ColourPicker.ViewModel;
 
 namespace XamlIcons.UserControl.ColourPicker
 {
@@ -7,6 +10,15 @@ namespace XamlIcons.UserControl.ColourPicker
     /// </summary>
     public partial class ColourPicker
     {
+        /// <summary>
+        /// Dependency Property for the <see cref="ItemsSource"/> property
+        /// </summary>
+        public static readonly DependencyProperty ItemsSourceProperty =
+            DependencyProperty.Register("ItemsSource", 
+                typeof(IEnumerable<ColourModel>), 
+                typeof(ColourPicker), 
+                new PropertyMetadata(null));
+
         /// <summary>
         /// Dependency Property for the <see cref="Data"/> property
         /// </summary>
@@ -64,6 +76,17 @@ namespace XamlIcons.UserControl.ColourPicker
         public ColourPicker()
         {
             InitializeComponent();
+
+            DataContext = new ColourPickerViewModel();
+        }
+        
+        /// <summary>
+        /// List of colours available
+        /// </summary>
+        public IEnumerable<ColourModel> ItemsSource
+        {
+            get { return (IEnumerable<ColourModel>)GetValue(ItemsSourceProperty); }
+            set { SetValue(ItemsSourceProperty, value); }
         }
 
         /// <summary>

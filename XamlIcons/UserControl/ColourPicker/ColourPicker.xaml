@@ -16,7 +16,7 @@
                 <Path Width="{Binding ElementName=Root, Path=IconWidth}" Height="{Binding ElementName=Root, Path=IconHeight}" Stroke="Black" Stretch="Fill" Fill="Black" Data="{Binding ElementName=Root, Path=Data}"/>
             </Canvas>
         </Button>
-        <ItemsControl ItemsSource="{Binding ElementName=Root, Path=Icons}"
+        <ItemsControl ItemsSource="{Binding Path=Colours}"
                       Visibility="{Binding ElementName=Root, Path=ColoursVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
 
             <ItemsControl.ItemsPanel>
