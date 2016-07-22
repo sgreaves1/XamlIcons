@@ -34,7 +34,7 @@
 
                         <ToggleButton.Template>
                             <ControlTemplate TargetType="{x:Type ToggleButton}">
-                                <Border Name="Border" BorderBrush="Black" BorderThickness="3" Background="AliceBlue">
+                                <Border Name="Border" BorderBrush="Black" BorderThickness="3" Background="{Binding Path=Colour}">
                                     <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Margin="{TemplateBinding Padding}"/>
                                 </Border>
                                 <ControlTemplate.Triggers>
